@@ -10,6 +10,8 @@
   width: 10%;
   background-color: coral;
   border: 1px solid;
+  font-size: 22px;
+  font-family: 'Archivo Narrow', sans-serif;
 
 }
 
@@ -21,6 +23,8 @@
   right: 0;
   margin-left: 2%;
   margin-top: 1%;
+  font-size: 16px;
+  font-family: 'Archivo Narrow', sans-serif;
 }
 
 #copyright {
