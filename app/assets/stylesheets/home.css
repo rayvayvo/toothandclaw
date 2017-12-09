@@ -1,0 +1,42 @@
+#colourtest {
+  background-color: #444444;
+}
+
+#navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 10%;
+  background-color: coral;
+  border: 1px solid;
+
+}
+
+#mainview {
+  position: fixed;
+  left: 10%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin-left: 2%;
+  margin-top: 1%;
+}
+
+#copyright {
+  font-size: 8px;
+}
+
+#navbar div {
+  margin-bottom: 2%;
+}
+
+#navlogo {
+  height: 20%;
+  width: 100%;
+}
+
+#navlogo img {
+  width: 100%;
+  height: 100%;
+}
