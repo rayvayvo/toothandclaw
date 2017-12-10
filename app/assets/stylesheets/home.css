@@ -51,7 +51,6 @@
 
 #loginform {
   border-bottom: 1px solid;
-  padding-bottom: 5%;
 }
 
 #loginform input {
@@ -69,8 +68,9 @@ input#loginbutton {
 }
 
 #register {
-  border-bottom: 1px solid;
-  padding-bottom: 3%;
+  border-top: 1px solid;
+  margin-top: 3%;
+  padding-top: 4%;
 }
 
 #navbar .btn-secondary {
