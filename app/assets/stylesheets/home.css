@@ -8,10 +8,10 @@
   top: 0;
   bottom: 0;
   width: 10%;
-  background-color: coral;
+  background-color: chocolate;
   border: 1px solid;
-  font-size: 22px;
-  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 16px;
+  font-family: 'Rubik', sans-serif;
 
 }
 
@@ -24,7 +24,7 @@
   margin-left: 2%;
   margin-top: 1%;
   font-size: 16px;
-  font-family: 'Archivo Narrow', sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 #copyright {
@@ -33,6 +33,7 @@
 
 #navbar div {
   margin-bottom: 2%;
+  padding-left: 5%;
 }
 
 #navlogo {
@@ -41,6 +42,49 @@
 }
 
 #navlogo img {
-  width: 100%;
+  width: 105%;
   height: 100%;
+  position: relative;
+  left: -5%;
+  border-bottom: 1px solid;
+}
+
+#loginform {
+  border-bottom: 1px solid;
+  padding-bottom: 5%;
+}
+
+#loginform input {
+  width: 95%;
+}
+
+input#loginbutton {
+  width: 50%;
+  margin-top: 3%;
+}
+
+#logintitle {
+  margin-bottom: 3%;
+  border-bottom: 1px solid;
+}
+
+#register {
+  border-bottom: 1px solid;
+  padding-bottom: 3%;
+}
+
+#navbar .btn-secondary {
+  background-color: chocolate;
+  border: none;
+}
+
+#navbar .btn-secondary:hover {
+  background-color: black;
+
+}
+
+#copyright {
+  position: absolute;
+  bottom: 1%;
+  left: 1%;
 }

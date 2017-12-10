@@ -4,48 +4,80 @@
     <%= image_tag("lily.jpg") %>
   </div>
 
+<div id='logintitle'>LOGIN:</div>
+
+  <div id='loginform'>
+
+<% if current_user %>
+  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+<% else %>
+
+    <%= form_tag '/login' do %>
+
+      Email: <%= text_field_tag :email %>
+      Password: <%= password_field_tag :password %>
+      <%= submit_tag "Submit", :id=> "loginbutton" %>
+
+    <% end %>
+<% end %>
+
+
+  </div>
+
+  <div id ='register'>
+    <div id='newusertitle'>
+      New User?
+    </div>
+
+    <a class="btn btn-secondary" href="/products" role="button" aria-haspopup="true" aria-expanded="false">
+      Register Here
+    </a>
+  </div>
 
   <div>
-
-    Email <br>
-    password<br>
-
-    <form action="http://toothandclaw.herokuapp.com">
-      <input type="submit" value="Go to Google" />
-    </form>
-  </div><br>
+      <a class="btn btn-secondary" href="/products" role="button" aria-haspopup="true" aria-expanded="false">
+        Cart (1)$9.99
+      </a>
+    </div>
+  <div>
+      <a class="btn btn-secondary" href="/products" role="button" aria-haspopup="true" aria-expanded="false">
+        Checkout
+      </a>
+  </div>
 
   <div>
-    <a href="/pages/:1">register</a>
-  </div><br>
+    <a class="btn btn-secondary" href="/products" role="button" aria-haspopup="true" aria-expanded="false">
+        Deals
+      </a>
+  </div>
+
+    <div>
+      <a class="btn btn-secondary" href="/products" role="button" aria-haspopup="true" aria-expanded="false">
+        Products
+      </a>
+    </div>
 
   <div>
-    Cart (0)$0.00<br>
-    Checkout
-  </div><br>
+    <a class="btn btn-secondary" href="/products" role="button" aria-haspopup="true" aria-expanded="false">
+        Animal Information
+      </a>
+  </div>
 
-  <div>
-    Deals
-  </div><br>
+   <div>
+    <a class="btn btn-secondary" href="/products" role="button" aria-haspopup="true" aria-expanded="false">
+        About
+      </a>
+  </div>
 
-  <div>
-    Products
-  </div><br>
-
-  <div>
-    Animal Information
-  </div><br>
-
-  <div>
-    About
-  </div><br>
-
-  <div>
-    Help
-  </div><br>
+   <div>
+    <a class="btn btn-secondary" href="/products" role="button" aria-haspopup="true" aria-expanded="false">
+        Help
+      </a>
+  </div>
 
   <div id='copyright'>
     copyright ToothandClaw 2017
   </div>
 
 </section>
+
