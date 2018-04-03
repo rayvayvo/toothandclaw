@@ -1,4 +1,46 @@
+/*body start*/
 
+#mainview {
+    position: absolute;
+    left: 20%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+}
+
+#indexsalesection {
+  height: 48%;
+  width: 100%;
+}
+
+#indextopsection {
+  height: 48%;
+  width: 100%;
+}
+
+#indexsalesbanner {
+    height: 10%;
+    position: absolute;
+    top: 36.5%;
+    width: 50%;
+    font-size: 29pt;
+    background-color: dodgerblue;
+    color: bisque;
+    left: 25%;
+    text-align: center;
+}
+
+#indextopbanner {
+    text-align: center;
+    border-top: 1px solid #cccccc;
+}
+
+/*body end*/
+
+
+/*navbar start*/
 
 #navbar {
   position: fixed;
@@ -8,19 +50,6 @@
   width: 20%;
   background-color: bisque;
   border: 1px solid;
-  font-size: 16px;
-  font-family: 'Rubik', sans-serif;
-
-}
-
-#mainview {
-  position: fixed;
-  left: 10%;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin-left: 2%;
-  margin-top: 1%;
   font-size: 16px;
   font-family: 'Rubik', sans-serif;
 }
@@ -127,3 +156,36 @@ input#loginbutton {
   bottom: -1%;
   left: 56%;
 }
+/*navbar end*/
+
+/*product card start*/
+.productcard {
+  margin-top: 1%;
+  margin-left: 2.95%;
+  border: 3px solid;
+  width: 16.5%;
+  height: 69%;
+  float: left;
+}
+
+.productcardimage {
+  height: 55%;
+  width: 100%;
+  border-bottom: 1px solid;
+}
+
+.productcardprice {
+  width: 100%;
+  border-bottom: 1px solid;
+}
+
+.productcardrating {
+  width: 100%;
+  border-bottom: 1px solid;
+}
+
+.productcardtags {
+  width: 100%;
+  font-size: 10pt;
+}
+/*product card end*/
