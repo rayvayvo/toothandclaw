@@ -1,0 +1,175 @@
+
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/home.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <title>title</title>
+  </head>
+  <body>
+
+<%= render "/pages/navbar.html.erb" %>
+
+<section id="mainview">
+
+  <section id="indexsalesection">
+
+    <div id="indexsalesbanner">
+      Today's spicy specials
+    </div><br><br>
+
+    <%
+    $category = request.fullpath.remove("/categories/").downcase
+    $catcount = 0
+    $categoryproducts = []
+    $i = 0
+
+    $x = 1
+    while ( $x <= Product.count) do
+      $t = 0
+      $current = Product.find($x)
+        while ($t < $current.tags.count) do
+          if $current.tags[$t] == $category
+            $categoryproducts[$catcount] = $current
+            $catcount += 1
+          end
+          $t += 1
+        end
+      $x += 1
+    end
+
+    $saleitems = $categoryproducts.sort_by{|e| -e[:sale]}
+    $z = 0
+    $salestop = 0
+
+    while $z < $saleitems.length do
+      if $saleitems[$z].sale === 0
+        $salestop = $z
+        $z = $saleitems.length
+      end
+      $z += 1
+    end
+
+    if $salestop === 0
+      $salestop = $saleitems.length
+    end
+
+    $topitems = $categoryproducts.sort_by{|e| -e[:id]}
+
+    while $i < $salestop  do
+    %>
+
+    <div class="productcard">
+      <div class="productcardimage">
+        <%= image_tag("#{$saleitems[$i].imgurl}") %>
+      </div>
+      <div class="productcardname">
+        <%= $saleitems[$i].name %>
+      </div>
+      <div class="productcardprice">
+        <del>
+          <%= number_to_currency($saleitems[$i].price) %>
+        </del>
+          <%= number_to_currency($saleitems[$i].price * ((100 - $saleitems[$i].sale)/100)) %>
+          (-<%= $saleitems[$i].sale  %>%)
+      </div>
+      <div class="productcardrating">
+        4.<%=$i%>/5 ****
+      </div>
+      <div class="productcardtags">
+        Tags:
+        <% $saleitems[$i].tags.each do |x| %>
+          <a href ="/categories/<%= x %>"><%= x %> </a>
+        <% end %>
+      </div>
+    </div>
+
+
+   <% $i += 1
+   end %>
+
+  </section>
+
+  <section id="indextopsection">
+
+    <div id="indextopbanner">
+      this weeks hot items
+    </div>
+
+    <% $s = 0
+    while $s < $topitems.length do
+    %>
+
+    <div class="productcard">
+      <div class="productcardimage">
+        <%= image_tag("#{$topitems[$s].imgurl}") %>
+      </div>
+      <div class="productcardname">
+        <%= $topitems[$s].name %>
+      </div>
+      <div class="productcardprice">
+        <% if $topitems[$s].sale > 0 %>
+          <del>
+            <%= number_to_currency($topitems[$s].price) %>
+          </del>
+        <% end %>
+        <%= number_to_currency($topitems[$s].price * ((100 - $topitems[$s].sale)/100)) %>
+        <% if $topitems[$s].sale > 0 %>
+            (-<%= $topitems[$s].sale  %>%)
+        <% end %>
+      </div>
+      <div class="productcardrating">
+        4.<%=$s%>/5 ****
+      </div>
+      <div class="productcardtags">
+        Tags:
+        <% $topitems[$s].tags.each do |x| %>
+          <a href ="/categories/<%= x %>"><%= x %> </a>
+        <% end %>
+      </div>
+    </div>
+
+
+   <% $s += 1
+   end %>
+
+
+  </section>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+  </body>
+</html>

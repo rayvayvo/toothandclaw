@@ -1,9 +1,20 @@
-<h1>Login</h1>
+    <%= form_tag '/login' do %>
 
-<%= form_tag '/login' do %>
+      <div id="loginemail">Email:</div>
+      <%= text_field_tag :email %>
+      <div id="loginpassword">Password:</div>
+      <%= password_field_tag :password %>
 
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
+      <%= submit_tag "Submit", :id=> "loginbutton" %>
 
-<% end %>
+    <% end %>
+
+    <div id ='register'>
+      <div id='newusertitle'>
+        New User?
+      </div>
+
+      <a class="btn btn-secondary" href="/signup" role="button" aria-haspopup="true" aria-expanded="false">
+        Register Here
+      </a>
+    </div>
